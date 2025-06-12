@@ -12,3 +12,12 @@ export let studentDetails = {
 export let a = () => {
   console.log("This is a function in Anurag.js");
 };
+
+const data = {
+  student: student,
+  branches: branches,
+  studentDetails: studentDetails,
+  a: a
+};
+
+export default data;
