@@ -1,11 +1,12 @@
 class Car {
-    constructor(brand, model) {
+    constructor(brand, model , price) {
         this.brand = brand;
         this.model = model;
+        this.price = price;
     }
 
     honk() {
-        console.log(`${this.brand} ${this.model} says Beep!`);
+        console.log(`${this.brand} ${this.model} of price ${this.price} says Beep!`);
     }
 
     static info() {
@@ -13,7 +14,7 @@ class Car {
     }
 }
 class Truck {
-    constructor(brand, model) {
+    constructor(brand, model ) {
         this.brand = brand;
         this.model = model;
     }
@@ -40,11 +41,11 @@ class VehicleFactory {
 }
 
 
-const car = VehicleFactory.createVehicle("car", "Toyota", "Supra");
+const car = VehicleFactory.createVehicle("car", "Toyota", "Supra" , 3456789);
 car.honk(); 
 Car.info();
 const truck = VehicleFactory.createVehicle("truck", "Ashok", "leyland");
 truck.honk();    
 Truck.info(); 
-const data = new Car("DataCar", "ModelX");
+const data = new Car("DataCar", "ModelX" , 234567);
 data.honk(); 
