@@ -5,6 +5,4 @@ console.log("Branches Array:", branches);
 console.log("Student Details Object:", studentDetails);
 console.log("Function from Anurag.js:");
 a();
-
-
 console.log("Data from default export:", data);
