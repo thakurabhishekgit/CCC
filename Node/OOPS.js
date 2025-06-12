@@ -46,4 +46,4 @@ cat.meow();
 
 const data = new Dog("DataDog");
 data.bark();
-Dog.info();
+
