@@ -6,6 +6,111 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <input type="text" id="personName" placeholder="Enter your name">
+    <select id="role">
+        <option value="Dancer">Dancer</option>
+        <option value="Programer">Programer</option>
+        <option value="Singer">Singer</option>
+    </select>
+    <button id="submitButton">Submit</button>
+    <div id="output"></div>
 </body>
+<script>
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+        learn() {
+            return `${this.name} is learning`;
+        }
+        walk() {
+            return `${this.name} is walking`;
+        }
+        eat() {
+            return `${this.name} is eating`;
+        }
+    }
+
+    class Dancer extends Person {
+        constructor(name, designation, groupName) {
+            super(name);
+            this.designation = designation;
+            this.groupName = groupName;
+        }
+        dancing() {
+            return `${this.name} is dancing in the group ${this.groupName}`;
+        }
+        learn() {
+            return super.learn() + `<br>${this.name} is learning dance moves`;
+        }
+        walk() {
+            return super.walk() + `<br>${this.name} is walking gracefully`;
+        }
+        eat() {
+            return super.eat() + `<br>${this.name} is eating healthy food for energy`;
+        }
+    }
+
+    class Programer extends Person {
+        constructor(name, designation, companyName) {
+            super(name);
+            this.designation = designation;
+            this.companyName = companyName;
+        }
+        coding() {
+            return `${this.name} is coding at ${this.companyName}`;
+        }
+        learn() {
+            return super.learn() + `<br>${this.name} is learning new programming languages`;
+        }
+        walk() {
+            return super.walk() + `<br>${this.name} is walking to the office`;
+        }
+        eat() {
+            return super.eat() + `<br>${this.name} is eating lunch at the office`;
+        }
+    }
+
+    class Singer extends Person {
+        constructor(name, designation, bandName) {
+            super(name);
+            this.designation = designation;
+            this.bandName = bandName;
+        }
+        singing() {
+            return `${this.name} is singing in the band ${this.bandName}`;
+        }
+        playGuitar() {
+            return `${this.name} is playing guitar`;
+        }
+        learn() {
+            return super.learn() + `<br>${this.name} is learning new songs`;
+        }
+        walk() {
+            return super.walk() + `<br>${this.name} is walking to the stage`;
+        }
+        eat() {
+            return super.eat() + `<br>${this.name} is eating before the performance`;
+        }
+    }
+
+    document.getElementById("submitButton").onclick = function() {
+        const name = document.getElementById("personName").value || "Anonymous";
+        const role = document.getElementById("role").value;
+        let obj, output = "";
+
+        if (role === "Dancer") {
+            obj = new Dancer(name, "Lead Dancer", "Dance Crew");
+            output += obj.learn() + "<br>" + obj.walk() + "<br>" + obj.eat() + "<br>" + obj.dancing();
+        } else if (role === "Programer") {
+            obj = new Programer(name, "Software Engineer", "Tech Company");
+            output += obj.learn() + "<br>" + obj.walk() + "<br>" + obj.eat() + "<br>" + obj.coding();
+        } else if (role === "Singer") {
+            obj = new Singer(name, "Vocalist", "Rock Band");
+            output += obj.learn() + "<br>" + obj.walk() + "<br>" + obj.eat() + "<br>" + obj.singing();
+        }
+
+        document.getElementById("output").innerHTML = output;
+    };
+</script>
 </html>
