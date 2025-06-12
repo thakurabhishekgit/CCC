@@ -8,6 +8,7 @@ export let studentDetails = {
   branch: "branch1",
 };
 
+
 export let a = () => {
   console.log("This is a function in Anurag.js");
 };
