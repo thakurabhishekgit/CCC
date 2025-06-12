@@ -40,10 +40,10 @@ class VehicleFactory {
 }
 
 
-const car = VehicleFactory.createVehicle("car", "Toyota", "Corolla");
+const car = VehicleFactory.createVehicle("car", "Toyota", "Supra");
 car.honk(); 
 Car.info();
-const truck = VehicleFactory.createVehicle("truck", "Ford", "F-150");
+const truck = VehicleFactory.createVehicle("truck", "Ashok", "leyland");
 truck.honk();    
 Truck.info(); 
 const data = new Car("DataCar", "ModelX");
