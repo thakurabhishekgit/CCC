@@ -43,3 +43,7 @@ const dog = AnimalFactory.createAnimal("dog", "Buddy");
 dog.bark(); 
 const cat = AnimalFactory.createAnimal("cat", "Whiskers");
 cat.meow(); 
+
+const data = new Dog("DataDog");
+data.bark();
+Dog.info();
