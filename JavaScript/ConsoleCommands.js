@@ -1,6 +1,5 @@
 let str = "  Hello, JavaScript World!  ";
 
-
 console.log("Length:", str.length);
 
 let trimmed = str.trim();
