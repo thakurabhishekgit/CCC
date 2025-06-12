@@ -12,6 +12,7 @@ class Car {
     static info() {
         console.log("Cars are fast vehicles.");
     }
+    
 }
 class Truck {
     constructor(brand, model ) {
