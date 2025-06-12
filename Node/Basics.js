@@ -43,7 +43,9 @@ const fetchData = () => {
     console.log(result);
   };
   
-  
+
   load();
+
+
   
   
