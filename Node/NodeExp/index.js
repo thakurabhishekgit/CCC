@@ -18,14 +18,38 @@
 
 import url from "url";
 import http from "http";
-let server = http.createServer((req, res) => {
+// let server = http.createServer((req, res) => {
+//     let myurl = url.parse(req.url, true);
+//     console.log(myurl);
+//     if (myurl.pathname == "/") {
+//         let name = myurl.query.name || "ccc";
+//         let age = myurl.query.age || "20";
+//         let gender = myurl.query.gender || "gay";
+//         res.writeHead(200, { "Content-Type": "text/plain" });
+//         let personality = "";
+//         if (gender == "male") {
+//             personality = "handsom";
+//         } else if (gender == "female") {
+//             personality = "pretty";
+//         } else {
+//             personality = "gay";
+//         }
+//         res.end(`Hello, ${name}! You are ${age} years old. You are ${gender}. You are ${personality}.` );
+//     }
+    
+// })
+
+
+//json
+
+const server = http.createServer((req, res) => {
     let myurl = url.parse(req.url, true);
     console.log(myurl);
     if (myurl.pathname == "/") {
         let name = myurl.query.name || "ccc";
         let age = myurl.query.age || "20";
         let gender = myurl.query.gender || "gay";
-        res.writeHead(200, { "Content-Type": "text/plain" });
+        res.writeHead(200, { "Content-Type": "application/json" });
         let personality = "";
         if (gender == "male") {
             personality = "handsom";
@@ -34,11 +58,9 @@ let server = http.createServer((req, res) => {
         } else {
             personality = "gay";
         }
-        res.end(`Hello, ${name}! You are ${age} years old. You are ${gender}. You are ${personality}.` );
+        res.end(JSON.stringify({ name, age, gender, personality }));
     }
-    
 })
-
 const port = 8000;
 server.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
