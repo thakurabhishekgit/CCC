@@ -1,1 +1,2 @@
-console.log("Hello World!");
+import os from "os";
+console.log(os.platform());
