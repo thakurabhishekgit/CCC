@@ -13,6 +13,7 @@
   "description": "Node Js Exp",
   "dependencies": {
     "express": "^5.1.0",
+    "http": "^0.0.1-security",
     "mongoos": "^0.0.1-security",
     "nodemon": "^3.1.10",
     "os": "^0.1.2"
