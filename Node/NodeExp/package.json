@@ -4,9 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+
   },
   "keywords": [],
-  "author": "",
+  "author": "Thakur Abhishek singh",
   "license": "ISC",
-  "description": ""
+  "description": "Node Js Exp"
 }
