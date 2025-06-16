@@ -12,6 +12,8 @@
   "license": "ISC",
   "description": "Node Js Exp",
   "dependencies": {
+    "express": "^5.1.0",
+    "mongoos": "^0.0.1-security",
     "nodemon": "^3.1.10",
     "os": "^0.1.2"
   }
