@@ -1,17 +1,19 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <title>Add Student</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body >
     <h2>Add Student</h2>
-    <form action="/addData" method="POST">
+    <form method="POST" action="/addData" >
         <label>Name: <input type="text" name="name" required></label><br><br>
-        <label>Father's Name: <input type="text" name="father" required></label><br><br>
-        <label>Mother's Name: <input type="text" name="mother" required></label><br><br>
+        <label>Father's Name: <input type="text" name="parents[father]" required></label><br><br>
+        <label>Mother's Name: <input type="text" name="parents[mother]" required></label><br><br>
         <label>Gender:
             <select name="gender" required>
                 <option value="male">Male</option>
@@ -20,6 +22,24 @@
         </label><br><br>
         <button type="submit">Add Student</button>
     </form>
+    <hr>
+    <h2>All Students</h2>
+    <button onclick="fetchStudents()">Refresh List</button>
+    <ul id="studentList"></ul>
+    <script>
+        function fetchStudents() {
+            fetch('/addData')
+                .then(res => res.json())
+                .then(data => {
+                    const ul = document.getElementById('studentList');
+                    ul.innerHTML = '';
+                    data.data.forEach(s => {
+                        ul.innerHTML += `<li>${s.id}: ${s.name} (${s.gender}), Father: ${s.parents.father}, Mother: ${s.parents.mother}</li>`;
+                    });
+                });
+        }
+        fetchStudents();
+    </script>
+</body>
 
-    
-</body
+</html>
