@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import fs from 'fs';
 const app = express();
 const port = 8000;
 
@@ -33,6 +33,9 @@ app.post("/addData", (req, res) => {
         status: "success",
         data: newStudent
     });
+
+    fs.writeFileSync("student.json", JSON.stringify(student));
+    
 });
 
 app.get("/addData", (req, res) => {

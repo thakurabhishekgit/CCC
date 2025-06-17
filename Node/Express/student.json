@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Anurag",
+    "parents": { "father": "Ravi", "mother": "Rani" },
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "name": "Fawwaz",
+    "parents": { "father": "me", "mother": "me" },
+    "gender": "male"
+  },
+  {
+    "id": 3,
+    "name": "Abhishek",
+    "parents": { "father": "me", "mother": "me" },
+    "gender": "male"
+  }
+]
