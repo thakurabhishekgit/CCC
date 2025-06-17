@@ -1,19 +1,18 @@
 import express from "express";
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
+import data from "./Fruits.js";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+
 
 const app = express();
 
 app.get("/", (req, res) => {
-    res.send("<h1>Hello World!</h1>");
-});
+    res.json(data );
+})
 
-app.get("/html", (req, res) => {
-    res.sendFile(__dirname + "/index.html");
-});
-
+app.get("/getName", (req, res) => {
+    const name = data.map((fruit) => fruit.name);
+    res.json(name);
+})
 
 const port = 8000;
 app.listen(port, () => {
