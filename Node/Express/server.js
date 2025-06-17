@@ -8,10 +8,16 @@ app.use(express.json());
 app.use(express.static(myPath))
 app.use(express.urlencoded({extended : true}))
 let student = [
-    {
-        name : "Anurag"
-    }
+    {   
+        id : 1,
+        name : "Anurag",
+        parents: {
+            father : "Ravi",
+            mother : "Rani"
+        } , 
+        gender : "male"
 
+    }
 ]
 
 app.post("/addData" , (req , res) => {
@@ -24,7 +30,10 @@ app.post("/addData" , (req , res) => {
 
 
 app.get("/addData" , (req , res) => {
-    res.json(JSON.stringify(student))
+    res.json({
+        status : "success",
+        data : student
+    })
 })
 
 
