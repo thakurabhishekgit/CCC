@@ -49,6 +49,7 @@ const server = http.createServer((req, res) => {
         let name = myurl.query.name || "ccc";
         let age = myurl.query.age || "20";
         let gender = myurl.query.gender || "gay";
+        let cgpa = myurl.query.cgpa || "10";
         res.writeHead(200, { "Content-Type": "application/json" });
         let personality = "";
         if (gender == "male") {
@@ -58,7 +59,7 @@ const server = http.createServer((req, res) => {
         } else {
             personality = "gay";
         }
-        res.end(JSON.stringify({ name, age, gender, personality }));
+        res.end(JSON.stringify({ name, age, gender, cgpa }) );
     }
 })
 const port = 8000;
