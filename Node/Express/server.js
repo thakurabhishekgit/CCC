@@ -9,8 +9,9 @@ app.get("/", (req, res) => {
     res.json(data );
 })
 
-app.get("/getName", (req, res) => {
-    const name = data.map((fruit) => fruit.name);
+app.get("/getName/:id", (req, res) => {
+    const { id } = req.params;
+    const name = data.find((item) => item.id == id);
     res.json(name);
 })
 
